@@ -1,6 +1,6 @@
-# frozen_string_literal: true
+# frozen_string_literal: false
 
-require './Person'
+require './person'
 
 class Student < Person
   def initialize(name, age, classroom, parent_permission: true)
