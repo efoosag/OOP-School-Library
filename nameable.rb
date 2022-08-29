@@ -1,10 +1,12 @@
 class Nameable
   def correct_name
-    raise NotImplementedError
+    raise NotImplementedError, "#{self.class} has not implemented method '#{__method__}'"
   end
 end
 
 class BaseDecorator < Nameable
+  attr_accessor :nameable
+
   def initialize(nameable)
     super()
     @nameable = nameable
