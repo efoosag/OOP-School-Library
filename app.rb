@@ -9,25 +9,23 @@ class App
     @persons = []
     @books = []
     @rentals = []
-    
   end
 
   def start_app
     until choose_options
       value = gets.chomp
-      # if value == '7'
-      #   puts 'Thank You for patronage!'
-      #   break
-      # end
+      if value == '7'
+        puts 'Thank You for patronage!'
+        break
+      end
 
-      chosen_value(value) 
+      chosen_value(value)
     end
   end
 
   def list_all_books
-    puts 'There are No Books.' if @books.empty? 
+    puts 'There are No Books.' if @books.empty?
     @books.each { |book| puts "Title: #{book.title} -> Author: #{book.author}" }
-   
   end
 
   def list_all_people
@@ -81,7 +79,7 @@ class App
     @persons.push(teacher)
     puts '1 Teacher Added'
   end
-  
+
   def create_book
     puts 'Add Book'
     puts 'Enter Title: '

@@ -6,14 +6,13 @@ def main
 end
 
 def choose_options
-  puts ['Choose between options 1 - 7: ', 
-        '1 - List all books', '2 - List all people', 
+  puts ['Choose between options 1 - 7: ',
+        '1 - List all books', '2 - List all people',
         '3 - Create a person',
         '4 - Create a book',
         '5 - Create a rental',
         '6 - List all rentals for a given person id',
         '7 - Exit']
-   
 end
 
 def chosen_value(value)
@@ -36,4 +35,3 @@ def chosen_value(value)
 end
 
 main
-
