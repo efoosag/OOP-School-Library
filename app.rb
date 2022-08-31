@@ -57,11 +57,11 @@ class App
     parent_permission = gets.chomp.downcase
     case parent_permission
     when 'n'
-      student = Student.new('undefined', age, name, parent_permission: false)
+      student = Student.new(age, name, 'undefined', parent_permission: false)
       @persons << student
       puts 'Student doesnt have parent permission, cant rent books'
     when 'y'
-      student = Student.new('undefined', age, name, parent_permission: true)
+      student = Student.new(age, name, 'undefined', parent_permission: true)
       @persons << student
       puts 'One Student Added'
     end
@@ -75,7 +75,7 @@ class App
     name = gets.chomp
     print 'Enter Teacher Specialization: '
     specialization = gets.chomp
-    teacher = Teacher.new(specialization, age, name)
+    teacher = Teacher.new(age, name, specialization)
     @persons.push(teacher)
     puts '1 Teacher Added'
   end
