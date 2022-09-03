@@ -118,7 +118,7 @@ class App
 
     puts 'Rented Books:'
     @rentals.each do |rental|
-      if rental.person.id == id
+      if rental.person.id = id
         puts "Person: #{rental.person.name} Date: #{rental.date}, Book: '#{rental.book.title}' by #{rental.book.author}"
 
       else
