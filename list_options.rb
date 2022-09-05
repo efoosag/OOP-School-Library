@@ -1,7 +1,7 @@
 module ListOptions
   def list_all_books
     puts 'There are No Books.' if @books.empty?
-    @books.each { |book| puts "Title: #{book.title} -> Author: #{book.author}" }
+    @books.each { |book| puts "Id: #{book.id} Title: #{book.title} -> Author: #{book.author}" }
   end
 
   def list_all_people

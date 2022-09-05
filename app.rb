@@ -1,8 +1,3 @@
-require './book'
-require './person'
-require './student'
-require './teacher'
-require './rental'
 require './choose'
 
 class App
@@ -22,6 +17,7 @@ class App
       end
 
       @choose.chosen_value(value)
+      @choose.save_book
     end
   end
 end
