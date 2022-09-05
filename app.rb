@@ -5,13 +5,12 @@ require './teacher'
 require './rental'
 require './choose'
 
-
 class App
   def initialize
     @persons = []
     @books = []
     @rentals = []
-    @choose = Choose.new()
+    @choose = Choose.new
   end
 
   def start_app
@@ -24,7 +23,5 @@ class App
 
       @choose.chosen_value(value)
     end
-
-  end  
-
+  end
 end

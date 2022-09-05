@@ -2,8 +2,8 @@ class Create
   def initialize(persons = 'unknown', books = 'unknown', rentals = 'unknown')
     @persons = persons
     @books = books
-    @rentals = rentals   
-  end  
+    @rentals = rentals
+  end
 
   def create_person
     puts 'To create a student, press 1, to create a teacher, press 2 : '
@@ -83,6 +83,4 @@ class Create
 
     puts 'Rental Record created'
   end
-
-
 end
