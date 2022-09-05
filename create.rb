@@ -1,4 +1,7 @@
+require './require_input'
+
 class Create
+ 
   def initialize(persons = 'unknown', books = 'unknown', rentals = 'unknown')
     @persons = persons
     @books = books
@@ -20,13 +23,7 @@ class Create
   end
 
   def create_student
-    puts 'Add Student'
-    puts 'Enter Student Age: '
-    age = gets.chomp.to_i
-    puts 'Enter Student Name: '
-    name = gets.chomp
-    puts 'Parent Permission? [Y/N]: '
-    parent_permission = gets.chomp.downcase
+    age, name,parent_permission = grab_student_data
     case parent_permission
     when 'n'
       student = Student.new(age, name, 'undefined', parent_permission: false)
@@ -40,27 +37,17 @@ class Create
   end
 
   def create_teacher
-    puts 'Add Teacher'
-    print 'Enter Teacher Age: '
-    age = gets.chomp.to_i
-    print 'Enter Teacher Name: '
-    name = gets.chomp
-    print 'Enter Teacher Specialization: '
-    specialization = gets.chomp
+    age, name, specialization = grap_teacher_data
     teacher = Teacher.new(age, name, specialization)
     @persons.push(teacher)
     puts '1 Teacher Added'
   end
 
   def create_book
-    puts 'Add Book'
-    puts 'Enter Title: '
-    title = gets.chomp
-    puts 'Enter Author: '
-    author = gets.chomp
-    book = Book.new(title, author)
-    @books.push(book)
-    puts "Book by #{author} is created."
+    title, author = grap_book_data
+  book = Book.new(title, author)
+  @books.push(book)
+  puts "Book by #{author} is created."
   end
 
   def create_rental
