@@ -3,25 +3,28 @@ require './person'
 require './student'
 require './teacher'
 require './rental'
-require './options'
+require './choose'
+
 
 class App
-  include Options
   def initialize
     @persons = []
     @books = []
     @rentals = []
+    @choose = Choose.new()
   end
 
   def start_app
-    until choose_options
+    until @choose.choose_options
       value = gets.chomp
       if value == '7'
         puts 'Thank You for patronage!'
         break
       end
 
-      chosen_value(value)
+      @choose.chosen_value(value)
     end
+
   end  
+
 end
