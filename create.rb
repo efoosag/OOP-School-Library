@@ -1,7 +1,6 @@
 require './require_input'
 
 class Create
- 
   def initialize(persons = 'unknown', books = 'unknown', rentals = 'unknown')
     @persons = persons
     @books = books
@@ -23,7 +22,7 @@ class Create
   end
 
   def create_student
-    age, name,parent_permission = grab_student_data
+    age, name, parent_permission = grab_student_data
     case parent_permission
     when 'n'
       student = Student.new(age, name, 'undefined', parent_permission: false)
@@ -45,9 +44,9 @@ class Create
 
   def create_book
     title, author = grap_book_data
-  book = Book.new(title, author)
-  @books.push(book)
-  puts "Book by #{author} is created."
+    book = Book.new(title, author)
+    @books.push(book)
+    puts "Book by #{author} is created."
   end
 
   def create_rental
