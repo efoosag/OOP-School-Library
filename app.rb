@@ -1,9 +1,5 @@
-require './book'
-require './person'
-require './student'
-require './teacher'
-require './rental'
 require './choose'
+require 'pry'
 
 class App
   def initialize
@@ -22,6 +18,10 @@ class App
       end
 
       @choose.chosen_value(value)
+      @choose.save_book
+      @choose.save_person
+      # binding.pry
+      # @choose.save_rental_data
     end
   end
 end

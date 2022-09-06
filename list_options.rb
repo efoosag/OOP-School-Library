@@ -1,7 +1,8 @@
+require 'pry'
 module ListOptions
   def list_all_books
     puts 'There are No Books.' if @books.empty?
-    @books.each { |book| puts "Title: #{book.title} -> Author: #{book.author}" }
+    @books.each { |book| puts "Id: #{book.id} Title: #{book.title} -> Author: #{book.author}" }
   end
 
   def list_all_people
@@ -14,13 +15,20 @@ module ListOptions
     id = gets.chomp.to_i
 
     puts 'Rented Books:'
-    @rentals.each do |rental|
-      if rental.person.id == id
-        puts "Person: #{rental.person.name} Date: #{rental.date}, Book: 6#{rental.book.title} by #{rental.book.author}"
+    #   @rentals.each do |rental|
 
-      else
-        puts
-        puts 'No records found'
+    #     if rental["id"] == id
+    #       puts "Person: #{rental["name"]} Date: #{rental["date"]}, Book: #{rental["title"]} by #{rental["author"]}"
+    #     else
+    #       puts "No record found"
+    #   end
+    # end
+    rented_book = @rentals.select { |rental| rental['id'] == id }
+    if rented_book.length.zero?
+      puts 'No recordfound'
+    else
+      rented_book.each do |rental|
+        puts "Person: #{rental['name']} Date: #{rental['date']}, Book: #{rental['title']} by #{rental['author']}"
       end
     end
   end

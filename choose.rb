@@ -1,12 +1,18 @@
 require './create'
 require './list_options'
+require './storage/bookstore'
+require './storage/personstore'
+require './storage/rentalstore'
 
 class Choose
+  include BookStore
+  include PersonStore
   include ListOptions
+  include RentalStorage
   def initialize
-    @books = []
-    @persons = []
-    @rentals = []
+    @books = upload_book
+    @persons = upload_person
+    @rentals = upload_rental_data
     @create = Create.new(@persons, @books, @rentals)
   end
 
