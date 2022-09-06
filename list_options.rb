@@ -1,3 +1,4 @@
+require 'pry'
 module ListOptions
   def list_all_books
     puts 'There are No Books.' if @books.empty?
@@ -14,14 +15,14 @@ module ListOptions
     id = gets.chomp.to_i
 
     puts 'Rented Books:'
-    @rentals.each do |rental|
-      if rental.person.id == id
-        puts "Person: #{rental.person.name} Date: #{rental.date}, Book: 6#{rental.book.title} by #{rental.book.author}"
-
-      else
-        puts
-        puts 'No records found'
-      end
-    end
+  
+  rented_book = @rentals.select {|rental| rental["id"] == id }
+ if rented_book.length.zero?
+  puts "No record found"
+ else
+  rented_book.each do |rental|
+    puts "Person: #{rental["name"]} Date: #{rental["date"]}, Book: #{rental["title"]} by #{rental["author"]}"
   end
+end
+end
 end
