@@ -15,14 +15,21 @@ module ListOptions
     id = gets.chomp.to_i
 
     puts 'Rented Books:'
-  
-  rented_book = @rentals.select {|rental| rental["id"] == id }
- if rented_book.length.zero?
-  puts "No record found"
- else
-  rented_book.each do |rental|
-    puts "Person: #{rental["name"]} Date: #{rental["date"]}, Book: #{rental["title"]} by #{rental["author"]}"
+    #   @rentals.each do |rental|
+
+    #     if rental["id"] == id
+    #       puts "Person: #{rental["name"]} Date: #{rental["date"]}, Book: #{rental["title"]} by #{rental["author"]}"
+    #     else
+    #       puts "No record found"
+    #   end
+    # end
+    rented_book = @rentals.select { |rental| rental['id'] == id }
+    if rented_book.length.zero?
+      puts 'No recordfound'
+    else
+      rented_book.each do |rental|
+        puts "Person: #{rental['name']} Date: #{rental['date']}, Book: #{rental['title']} by #{rental['author']}"
+      end
+    end
   end
-end
-end
 end

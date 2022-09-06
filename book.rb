@@ -1,5 +1,5 @@
 class Book
-   attr_accessor :title, :author, :id, :rental
+  attr_accessor :title, :author, :id, :rental
 
   def initialize(title, author)
     @id = id || Random.rand(1...1000)

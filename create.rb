@@ -2,7 +2,7 @@ require './require_input'
 require './storage/rentalstore'
 
 class Create
-include RentalStorage
+  include RentalStorage
   def initialize(persons = 'unknown', books = 'unknown', rentals = 'unknown')
     @persons = persons
     @books = books
@@ -67,7 +67,8 @@ include RentalStorage
     puts 'Date: '
     date = gets.chomp.to_s
     rental = Rental.new(date, @books[book_id], @persons[person_id])
-    @rentals << {date: rental.date, id: rental.person.id, name: rental.person.name, author: rental.book.author, title: rental.book.title}
+    @rentals << { date: rental.date, id: rental.person.id, name: rental.person.name, author: rental.book.author,
+                  title: rental.book.title }
     save_rental_data(@rentals)
     puts 'Rental Record created'
   end

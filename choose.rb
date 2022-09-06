@@ -8,7 +8,7 @@ class Choose
   include BookStore
   include PersonStore
   include ListOptions
-include RentalStorage
+  include RentalStorage
   def initialize
     @books = upload_book
     @persons = upload_person
