@@ -18,6 +18,7 @@ class App
 
       @choose.chosen_value(value)
       @choose.save_book
+      @choose.save_person
     end
   end
 end
