@@ -1,4 +1,3 @@
-require 'pry'
 module ListOptions
   def list_all_books
     puts 'There are No Books.' if @books.empty?

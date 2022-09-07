@@ -1,5 +1,4 @@
 require './choose'
-require 'pry'
 
 class App
   def initialize
