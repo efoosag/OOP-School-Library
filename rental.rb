@@ -5,10 +5,9 @@ class Rental
   def initialize(date, book, person)
     @date = date
     @book = book
-    # binding.pry
     book.rental << self
     @person = person
     person.rental << self
-    # person.add_rental(self)
+   
   end
 end
