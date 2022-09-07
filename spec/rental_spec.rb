@@ -13,11 +13,11 @@ describe Rental do
     end
 
     it 'Rental book title should be Water Fall' do
-        expect(rental.book.title).to eq 'Water Fall'
+      expect(rental.book.title).to eq 'Water Fall'
     end
 
     it 'Rental book author should be James Bond' do
-        expect(rental.book.author).to eq 'James Bond'
+      expect(rental.book.author).to eq 'James Bond'
     end
   end
 end

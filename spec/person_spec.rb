@@ -36,6 +36,5 @@ describe Person do
     it 'Person2 with_age should return false' do
       expect(person2.send(:with_age?)).to be false
     end
-
   end
 end
